@@ -132,15 +132,75 @@
 
 """15. Contagem de Frequência de Itens - Objetivo: Dada uma string, contar a frequência de cada caractere usando um dicionário."""
 
-texto = "engenharia de dados"
-frequencia = {} # Primeiro, criamos um dicionário vazio chamado frequencia. Pense nesse dicionário como uma tabela onde vamos anotar cada letra (caractere) que encontrarmos e quantas vezes a vimos.
+# texto = "engenharia de dados"
+# frequencia = {} # Primeiro, criamos um dicionário vazio chamado frequencia. Pense nesse dicionário como uma tabela onde vamos anotar cada letra (caractere) que encontrarmos e quantas vezes a vimos.
 
-for caractere in texto: # Agora, vamos examinar cada letra (caractere) na nossa palavra misteriosa, "engenharia de dados", uma por uma.
-    if caractere in frequencia: # Aqui estamos dizendo: "Se já vimos essa letra antes (ou seja, ela já está na nossa tabela de contagens), então apenas aumente o número de vezes que vimos ela (frequencia[caractere] += 1)."
-        frequencia[caractere] += 1
-    else:
-        frequencia[caractere] = 1 # Mas, se é a primeira vez que encontramos essa letra, precisamos adicioná-la à nossa tabela com o número 1, pois é a primeira vez que a vimos.
+# for caractere in texto: # Agora, vamos examinar cada letra (caractere) na nossa palavra misteriosa, "engenharia de dados", uma por uma.
+#     if caractere in frequencia: # Aqui estamos dizendo: "Se já vimos essa letra antes (ou seja, ela já está na nossa tabela de contagens), então apenas aumente o número de vezes que vimos ela (frequencia[caractere] += 1)."
+#         frequencia[caractere] += 1
+#     else:
+#         frequencia[caractere] = 1 # Mas, se é a primeira vez que encontramos essa letra, precisamos adicioná-la à nossa tabela com o número 1, pois é a primeira vez que a vimos.
+
+# print(frequencia)
+
+# Exercícios de Funções
+"""# 16. Escreva uma função que receba uma lista de números e retorne a soma de todos os números."""
+
+# Primeiro criamos a lista de numeros:
+
+# lista_numeros: list = [1,4,6,7,3,9]
+
+# def soma_numeros(lista_de_numeros: list) -> int: # int: Isso é outra dica de tipo, indicando que a função vai retornar um número inteiro (int), que será a soma dos números da lista.
+#     soma = 0
+#     for numero in lista_de_numeros:
+#         soma += numero
+#     return soma
+
+# # Chamada da função passando a lista de números e impressão do resultado
+# resultado = soma_numeros(lista_numeros)
+# print(f"A soma dos números é: {resultado}")
+
+"""# 17. Crie uma função que receba um número como argumento e retorne True se o número for primo e False caso contrário."""
+
+# n: int = int(input("Escreva um número: "))
+
+# def eh_primo(n):
+#     if n <= 1:
+#         return False
+#     for i in range(2, int(n**0.5) + 1):
+#         if n % i == 0:
+#             return False
+#     return True
+# print(eh_primo(n))
 
 
+"""# 18. Desenvolva uma função que receba uma string como argumento e retorne essa string revertida."""
 
-print(frequencia)
+# def inversao(string_normal):
+#     return string_normal[::-1]
+
+# string_normal: str = input("Escreva uma palavra: ")
+# palavra_invertida = inversao(string_normal)
+# print(palavra_invertida)
+
+"""# 19. Implemente uma função que receba dois argumentos: uma lista de números e um número. A função deve retornar todas as combinações de pares na lista que somem ao número dado."""
+
+# def encontrar_pares(lista_numeros, soma_desejada):
+#     pares_encontrados = []
+#     for i in range(len(lista_numeros)):
+#         for j in range(i + 1, len(lista_numeros)):
+#             if lista_numeros[i] + lista_numeros[j] == soma_desejada:
+#                 pares_encontrados.append((lista_numeros[i], lista_numeros[j]))
+#     return pares_encontrados
+
+# lista_teste = [1, 2, 3, 4, 5]
+# soma_alvo = 5
+# print(encontrar_pares(lista_teste, soma_alvo))
+
+"""# 20. Escreva uma função que receba um dicionário e retorne uma lista de chaves ordenadas"""
+
+def chaves_ordenadas(dicionario): # Primeiro, definimos a função chaves_ordenadas que espera receber um dicionário como argumento
+    lista_chaves_ordenadas = sorted(dicionario.keys()) # Dentro da função, podemos extrair as chaves do dicionário usando o método .keys(). Esse método retorna um objeto de visualização que exibe uma lista de todas as chaves no dicionário. Para ordenar essas chaves, podemos usar a função sorted(), que retorna uma nova lista contendo todos os itens do iterável fornecido em ordem ascendente. Portanto, podemos passar o objeto de visualização das chaves diretamente para a função sorted().
+    return lista_chaves_ordenadas 
+dicionario_teste = {"banana": 3, "maçã": 5, "pera": 2, "laranja": 7}
+print(chaves_ordenadas(dicionario_teste))
